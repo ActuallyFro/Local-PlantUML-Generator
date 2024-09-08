@@ -92,6 +92,19 @@ def generate_index_html():
 
 # Watchdog EventHandler for detecting file changes
 class ChangeHandler(FileSystemEventHandler):
+    def __init__(self):
+        super().__init__()
+        self.initial_render()
+
+    def initial_render(self):
+        for file in os.listdir('.'):
+            if file.endswith('.puml'):
+                png_file = file.replace(".puml", ".png")
+                if not os.path.exists(png_file):
+                    print(f"[LPG] [NOTICE] Generating initial PNG for {file}")
+                    subprocess.run(["java", "-Djava.awt.headless=true", "-jar", PlantUMLPath, file])
+        generate_index_html()
+
     def on_modified(self, event):
         if event.src_path.endswith(".puml"):
             file_mod_times[event.src_path] = os.path.getmtime(event.src_path)
@@ -99,7 +112,7 @@ class ChangeHandler(FileSystemEventHandler):
             subprocess.run(["java", "-Djava.awt.headless=true", "-jar", PlantUMLPath, event.src_path])
             print(f"[LPG] [NOTICE] {event.src_path} has been updated and rendered.")
             generate_index_html()  # Update index.html
-            asyncio.run(notify_clients(event.src_path))  # Notify clients to refresh
+            asyncio.run(notify_clients())  # Notify clients to refresh
 
 # WebSocket server to notify clients
 async def websocket_handler(websocket, path):
