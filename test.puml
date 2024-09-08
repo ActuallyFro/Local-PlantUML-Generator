@@ -1,0 +1,50 @@
+@startwbs
+* DevSecOps Approach
+
+** Dev
+
+*** Phase 1: Planning
+**** Task 1.1: Define Scope
+**** Task 1.2: Gather Requirements
+**** Task 1.3: Create Project Plan
+
+*** Phase 2: Design
+**** Task 2.1: Design Wireframes
+**** Task 2.2: Create Mockups
+**** Task 2.3: Review & Approve Designs
+
+*** Phase 3: Development
+**** Task 3.1: Set up Development Environment
+**** Task 3.2: Develop Frontend
+**** Task 3.3: Develop Backend
+**** Task 3.4: Integrate Frontend and Backend
+
+*** Phase 4: Testing
+**** Task 4.1: Write Test Cases
+**** Task 4.2: Perform Functional Testing
+**** Task 4.3: Perform User Acceptance Testing
+
+** Sec
+*** Phase 5: Security
+**** Task 5.1: Perform Security Assessment
+**** Task 5.2: Implement Security Controls
+**** Task 5.3: Conduct Security Testing
+**** Task 5.4: Monitor Security Incidents
+
+
+** Ops
+*** Phase 6: Staging
+**** Task 6.1: Set Up Staging Environment
+**** Task 6.2: Deploy to Staging
+**** Task 6.3: Perform Staging Testing
+
+*** Phase 7: Production
+**** Task 7.1: Set Up Production Environment
+**** Task 7.2: Deploy to Production
+**** Task 7.3: Perform Production Testing
+
+*** Phase 8: Maintenance
+**** Task 8.1: Monitor Performance
+**** Task 8.2: Fix Bugs
+**** Task 8.3: Implement Updates
+@endwbs
